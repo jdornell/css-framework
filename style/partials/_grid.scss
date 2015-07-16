@@ -1,0 +1,106 @@
+/* Base */
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+@import 'buttons';
+
+*, 
+*:after, 
+*:before {
+    @include border-box;
+    outline: none;
+    border: none;
+}
+
+.title-big {
+    font-size: $font-size-bigger;
+}
+
+h1 {
+    font-size: $font-size-heading;
+}
+
+h2 {
+    font-size: $font-size-sub-heading;
+}
+
+h3 {
+    font-size: $font-size-h3;
+}
+
+h4 {
+    font-size: $font-size-h4;
+}
+
+h5 {
+    font-size: $font-size-h5;
+}
+
+h6 {
+    font-size: $font-size-h6;
+}
+
+body {
+    margin: $pad;
+    font-size: $font-size-body;
+    line-height: $line-height;
+}
+ 
+/* Layout */ 
+.row,
+.column {
+    margin-bottom: $pad;
+    &:after {
+        @include clearfix;
+    }
+}
+
+.basic-img {
+    @include basic-img;
+}
+      
+[class*='column-'] {
+    @include basic-col;
+}
+
+.column-centered {
+    @include column-centered;
+}
+
+.text-center {
+    @include text-center;
+}
+
+.pull-right {
+    @include pull-right;
+}
+
+/*
+  For loop to count the width of the columns 
+  ------------------------------------------
+ */   
+@for $i from $first-column through $column-total {      
+    .mobile-column-#{$i} {         
+        width: $full-width / $column-total * $i - $gutter;   
+    }           
+}
+   
+/*
+  Responsiveness 
+  ------------------------------------------
+ */    
+ 
+@media (min-width: 768px) {
+    @for $i from $first-column through $column-total {      
+        .tablet-column-#{$i} {         
+            width: $full-width / $column-total * $i - $gutter;   
+        }           
+    } 
+}
+@media (min-width: 970px) {
+    @for $i from $first-column through $column-total {      
+        .desktop-column-#{$i} {         
+            width: $full-width / $column-total * $i - $gutter;   
+        }           
+    } 
+}   

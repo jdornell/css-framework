@@ -1,0 +1,25 @@
+@import 'mixins';
+
+.btn {
+	@include btn;
+}
+
+.btn-default {
+	@include btn-default;
+}
+
+.btn-inverted {
+	@include btn-inverted;
+}
+
+.btn-small {
+	@include btn-small;
+}
+
+.btn-success {
+	@include btn-success;
+}
+
+.btn-error {
+	@include btn-error;
+}

@@ -1,0 +1,99 @@
+/* Base */
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin basic-img {
+    max-width: 100%;
+    height: auto;
+}
+
+@mixin clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@mixin basic-col {
+    padding: 0.5em;
+    min-height: 1px; 
+    height: auto;
+    float: left;
+    width: 100%;
+    margin: 1%;
+}
+
+
+/* Layout */
+@mixin column-centered {
+    margin: 0 auto;
+    float: none;
+}
+
+@mixin text-center {
+    text-align: center;
+}
+
+@mixin pull-right {
+    float: right;
+}
+
+/* Modules */
+@mixin hover-effect {
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+
+@mixin btn {
+    background: transparent;
+    padding: 10px 50px 10px 50px;
+    font-size: $font-size-h5;
+    @include hover-effect;
+}
+
+@mixin btn-default {
+    border: 2px solid #000;
+    &:hover {
+        transform: translateY(10px); 
+    }
+}
+
+@mixin btn-inverted {
+    background: #000;
+    color: #fff;
+    &:hover {
+        animation-play-state: running; 
+    }
+}
+
+@mixin btn-small {
+    padding: 5px 20px 5px 20px;
+    &:hover {
+        animation-play-state: running; 
+    }
+}
+
+@mixin btn-success {
+    background: #26A65B;
+    color: #fff;
+    border: 2px solid #26A65B; 
+    &:hover {
+        animation-play-state: running; 
+    }
+}
+
+@mixin btn-error {
+    background: #D91E18;
+    color: #fff;
+    border: 2px solid #D91E18;
+    &:hover {
+        animation-play-state: running; 
+    }
+}
