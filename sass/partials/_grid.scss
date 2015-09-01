@@ -2,7 +2,6 @@
 @import 'reset';
 @import 'variables';
 @import 'mixins';
-@import 'buttons';
 
 *, 
 *:after, 
@@ -10,34 +9,6 @@
     @include border-box;
     outline: none;
     border: none;
-}
-
-.title-big {
-    font-size: $font-size-bigger;
-}
-
-h1 {
-    font-size: $font-size-heading;
-}
-
-h2 {
-    font-size: $font-size-sub-heading;
-}
-
-h3 {
-    font-size: $font-size-h3;
-}
-
-h4 {
-    font-size: $font-size-h4;
-}
-
-h5 {
-    font-size: $font-size-h5;
-}
-
-h6 {
-    font-size: $font-size-h6;
 }
 
 body {
